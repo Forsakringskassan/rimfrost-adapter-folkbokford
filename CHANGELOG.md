@@ -1,6 +1,6 @@
-# rimfrost-framework-folkbokford-adapter changelog
+# rimfrost-adapter-folkbokford changelog
 
-Changelog of rimfrost-framework-folkbokford-adapter.
+Changelog of rimfrost-adapter-folkbokford.
 
 ## 0.0.2 (2026-02-11)
 

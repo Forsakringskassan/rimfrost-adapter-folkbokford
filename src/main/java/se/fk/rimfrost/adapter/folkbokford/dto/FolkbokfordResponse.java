@@ -1,4 +1,4 @@
-package se.fk.rimfrost.framework.folkbokford.adapter.dto;
+package se.fk.rimfrost.adapter.folkbokford.dto;
 
 import org.immutables.value.Value;
 
