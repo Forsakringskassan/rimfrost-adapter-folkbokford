@@ -1,1 +1,1 @@
-# rimfrost-framework-folkbokford-adapter
+# rimfrost-adapter-folkbokford

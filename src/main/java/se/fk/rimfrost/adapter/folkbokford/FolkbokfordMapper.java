@@ -1,9 +1,9 @@
-package se.fk.rimfrost.framework.folkbokford.adapter;
+package se.fk.rimfrost.adapter.folkbokford;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import se.fk.rimfrost.framework.folkbokford.adapter.dto.FolkbokfordResponse;
-import se.fk.rimfrost.framework.folkbokford.adapter.dto.FolkbokfordResponse.Kon;
-import se.fk.rimfrost.framework.folkbokford.adapter.dto.ImmutableFolkbokfordResponse;
+import se.fk.rimfrost.adapter.folkbokford.dto.FolkbokfordResponse;
+import se.fk.rimfrost.adapter.folkbokford.dto.FolkbokfordResponse.Kon;
+import se.fk.rimfrost.adapter.folkbokford.dto.ImmutableFolkbokfordResponse;
 import se.fk.rimfrost.api.folkbokforing.jaxrsspec.controllers.generatedsource.model.FolkbokforingPersnrGet200Response;
 
 @ApplicationScoped

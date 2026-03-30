@@ -1,4 +1,4 @@
-package se.fk.rimfrost.framework.folkbokford.adapter;
+package se.fk.rimfrost.adapter.folkbokford;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -7,8 +7,8 @@ import jakarta.ws.rs.WebApplicationException;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import se.fk.github.jaxrsclientfactory.JaxrsClientFactory;
 import se.fk.github.jaxrsclientfactory.JaxrsClientOptionsBuilders;
-import se.fk.rimfrost.framework.folkbokford.adapter.dto.FolkbokfordRequest;
-import se.fk.rimfrost.framework.folkbokford.adapter.dto.FolkbokfordResponse;
+import se.fk.rimfrost.adapter.folkbokford.dto.FolkbokfordRequest;
+import se.fk.rimfrost.adapter.folkbokford.dto.FolkbokfordResponse;
 import se.fk.rimfrost.api.folkbokforing.jaxrsspec.controllers.generatedsource.FolkbokforingControllerApi;
 
 @SuppressWarnings("unused")

@@ -8,12 +8,12 @@
     <artifactId>fk-maven-parent</artifactId>
     <version>1.11.1</version>
   </parent>
-  <groupId>se.fk.rimfrost.framework.folkbokford</groupId>
-  <artifactId>rimfrost-framework-folkbokford-adapter</artifactId>
+  <groupId>se.fk.rimfrost.adapter.folkbokford</groupId>
+  <artifactId>rimfrost-adapter-folkbokford</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>Rimfrost Framework regel</name>
+  <name>Rimfrost Folkbokford adapter</name>
 
   <distributionManagement>
     <repository>
