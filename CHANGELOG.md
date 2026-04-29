@@ -2,6 +2,20 @@
 
 Changelog of rimfrost-adapter-folkbokford.
 
+## 1.0.0 (2026-04-29)
+
+### Breaking changes
+
+-  release 1.0 ([b0de6](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/b0de61afb29ef79) Lars Persson)  
+
+### Features
+
+-  release 1.0 ([b0de6](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/b0de61afb29ef79) Lars Persson)  
+
+### Bug Fixes
+
+-  Bump rimfrost-service-folkbokforing-openapi to released version ([358d3](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/358d3e6114f6ec2) Lars Persson)  
+
 ## 0.0.3 (2026-03-30)
 
 ### Bug Fixes
