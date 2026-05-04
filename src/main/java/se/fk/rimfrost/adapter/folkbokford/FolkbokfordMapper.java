@@ -12,10 +12,6 @@ public class FolkbokfordMapper
 
    public FolkbokfordResponse toFolkbokfordResponse(FolkbokforingPersnrGet200Response apiResponse)
    {
-      if (apiResponse == null)
-      {
-         return null;
-      }
       return ImmutableFolkbokfordResponse.builder()
             .id(apiResponse.getId())
             .fornamn(apiResponse.getFornamn())
