@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/folkbokforing/19990101-9999"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": "19990101-9999",
+      "fornamn": "fornamn",
+      "efternamn": "efternamn",
+      "adress": {
+        "utdelningsadress": "utdelningsadress",
+        "postnummer": "postnummer",
+        "postort": "postort",
+        "careOf": "careOf"
+      },
+      "kon": "M"
+    }
+  }
+}
