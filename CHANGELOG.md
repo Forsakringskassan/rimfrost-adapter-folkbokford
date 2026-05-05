@@ -2,6 +2,15 @@
 
 Changelog of rimfrost-adapter-folkbokford.
 
+## 1.0.1 (2026-05-04)
+
+### Bug Fixes
+
+-  Throw FolkbokfordException on internal error states ([de534](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/de53462d107c82f) Lars Persson)  
+
+### Dependency updates
+
+- add renovate.json ([52736](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/527362819d501a9) renovate[bot])  
 ## 1.0.0 (2026-04-29)
 
 ### Breaking changes
