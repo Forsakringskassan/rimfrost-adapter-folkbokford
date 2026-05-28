@@ -2,6 +2,19 @@
 
 Changelog of rimfrost-adapter-folkbokford.
 
+## 1.0.2 (2026-05-21)
+
+### Bug Fixes
+
+-  **deps**  update dependency se.fk.maven:fk-maven-parent to v1.12.0 ([e9ff2](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/e9ff24cb43164e1) renovate[bot])  
+-  **deps**  update dependency org.immutables:value to v2.12.1 ([196d1](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/196d15334bb85cf) renovate[bot])  
+-  **deps**  update dependency com.fasterxml.jackson.core:jackson-databind to v2.21.3 ([5c9dc](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/5c9dc8c6cf54736) renovate[bot])  
+
+### Dependency updates
+
+- update dependency org.immutables:value-processor to v2.12.2 ([8fa27](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/8fa27e980cb40ca) renovate[bot])  
+- update dependency org.immutables:value-processor to v2.12.1 ([3bb16](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/3bb16da83e38e69) renovate[bot])  
+- update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.15.0 ([435db](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/435dbbbf62a9a25) renovate[bot])  
 ## 1.0.1 (2026-05-04)
 
 ### Bug Fixes
