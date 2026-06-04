@@ -2,6 +2,21 @@
 
 Changelog of rimfrost-adapter-folkbokford.
 
+## 1.1.1 (2026-06-04)
+
+### Bug Fixes
+
+-  Bump release version ([b07f6](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/b07f6e339357635) Lars Persson)  
+
+## rimfrost-1.1 (2026-06-04)
+
+### Bug Fixes
+
+-  **deps**  update jackson monorepo to v2.22.0 ([164a0](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/164a0ff02abacf0) renovate[bot])  
+-  **deps**  update dependency se.fk.rimfrost.api.folkbokforing:rimfrost-folkbokforing-api-jaxrs-spec to v2.0.1 ([ca0e1](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/ca0e17d8cc63ebc) renovate[bot])  
+-  **deps**  update dependency org.immutables:value to v2.12.2 (#10) ([4eb0b](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/4eb0be7421dc28f) renovate[bot])  
+-  bump rimfrost-folkbokforing-api-jaxrs-spec to 2.0.1 ([7fe83](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/7fe837a27f3723a) Ulf Slunga)  
+
 ## 1.0.2 (2026-05-21)
 
 ### Bug Fixes
