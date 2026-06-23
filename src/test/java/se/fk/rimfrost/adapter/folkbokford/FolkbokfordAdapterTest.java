@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
-@QuarkusComponentTest(value =
+@QuarkusComponentTest(useSystemConfigSources = true, value =
 {
       FolkbokfordMapper.class
 })
