@@ -1,6 +1,7 @@
 package se.fk.rimfrost.adapter.folkbokford;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.BadRequestException;
@@ -8,11 +9,14 @@ import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.ServiceUnavailableException;
 import jakarta.ws.rs.ProcessingException;
 import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.glassfish.jersey.apache5.connector.Apache5ConnectorProvider;
+import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.client.proxy.WebResourceFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.fk.github.jaxrsclientfactory.JaxrsClientFactory;
-import se.fk.github.jaxrsclientfactory.JaxrsClientOptionsBuilders;
 import se.fk.rimfrost.adapter.folkbokford.dto.FolkbokfordRequest;
 import se.fk.rimfrost.adapter.folkbokford.dto.FolkbokfordResponse;
 import se.fk.rimfrost.api.folkbokforing.jaxrsspec.controllers.generatedsource.FolkbokforingControllerApi;
@@ -33,12 +37,29 @@ public class FolkbokfordAdapter
 
    private FolkbokforingControllerApi folkbokfordClient;
 
+   private Client client;
+
    @PostConstruct
    void init()
    {
-      this.folkbokfordClient = new JaxrsClientFactory()
-            .create(JaxrsClientOptionsBuilders.createClient(folkbokfordBaseUrl, FolkbokforingControllerApi.class)
-                  .build());
+      ClientConfig clientConfig = new ClientConfig();
+      clientConfig.connectorProvider(new Apache5ConnectorProvider());
+      client = ClientBuilder.newClient(clientConfig);
+      this.folkbokfordClient = WebResourceFactory.newResource(
+            FolkbokforingControllerApi.class,
+            client.target(folkbokfordBaseUrl));
+   }
+
+   @PreDestroy
+   void destroy()
+   {
+      this.folkbokfordClient = null;
+
+      if (client != null)
+      {
+         client.close();
+         client = null;
+      }
    }
 
    public FolkbokfordResponse getFolkbokfordInfo(FolkbokfordRequest folkbokfordRequest) throws FolkbokfordException
