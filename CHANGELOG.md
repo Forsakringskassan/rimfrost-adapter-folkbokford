@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-adapter-folkbokford.
 
+## 1.1.5 (2026-09-22)
+
+### Bug Fixes
+
+-  bump rimfrost-folkbokforing-api-jaxrs-spec to 2.0.2 ([bd239](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/bd23937e074c772) Ulf Slunga)  
+
 ## 1.1.4 (2026-09-21)
 
 ### Bug Fixes
