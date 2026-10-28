@@ -2,6 +2,23 @@
 
 Changelog of rimfrost-adapter-folkbokford.
 
+## 1.1.6 (2026-10-28)
+
+### Bug Fixes
+
+-  Replace github workflows ([0188f](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/0188fcd8ef94f4a) Lars Persson)  
+-  **deps**  update dependency se.fk.rimfrost.api.folkbokforing:rimfrost-folkbokforing-api-jaxrs-spec to v2.0.3 ([e5da9](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/e5da950804edd77) renovate[bot])  
+-  **deps**  update dependency io.quarkus:quarkus-bom to v3.40.1.1 (#15) ([49ce3](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/49ce3bee818a13c) renovate[bot])  
+-  **deps**  update dependency com.fasterxml.jackson.core:jackson-databind to v2.22.4 ([3a5c4](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/3a5c48f396a8511) renovate[bot])  
+-  **deps**  update dependency org.immutables:bom to v2.12.3 ([06d3b](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/06d3bf6303eeef4) renovate[bot])  
+-  **deps**  update dependency io.quarkus:quarkus-bom to v3.40.1 ([21489](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/214895148dcd4f3) renovate[bot])  
+-  **deps**  update dependency io.quarkus:quarkus-bom to v3.40.0 ([11d09](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/11d09b67513e4b6) renovate[bot])  
+-  **deps**  update dependency com.fasterxml.jackson.core:jackson-databind to v2.22.3 ([88732](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/887324e28674658) renovate[bot])  
+
+### Dependency updates
+
+- update forsakringskassan/.github digest to 733eb32 ([f0c17](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/f0c176711aec52a) renovate[bot])  
+- update forsakringskassan/.github digest to cbd74f1 ([1a834](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/1a834dc6b763d99) renovate[bot])  
 ## 1.1.5 (2026-09-22)
 
 ### Bug Fixes
