@@ -4,16 +4,13 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.BadRequestException;
-import jakarta.ws.rs.NotFoundException;
-import jakarta.ws.rs.ServiceUnavailableException;
 import jakarta.ws.rs.ProcessingException;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.client.Client;
-import jakarta.ws.rs.client.ClientBuilder;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.glassfish.jersey.apache5.connector.Apache5ConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.glassfish.jersey.client.proxy.WebResourceFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,7 +41,7 @@ public class FolkbokfordAdapter
    {
       ClientConfig clientConfig = new ClientConfig();
       clientConfig.connectorProvider(new Apache5ConnectorProvider());
-      client = ClientBuilder.newClient(clientConfig);
+      client = new JerseyClientBuilder().withConfig(clientConfig).build();
       this.folkbokfordClient = WebResourceFactory.newResource(
             FolkbokforingControllerApi.class,
             client.target(folkbokfordBaseUrl));
@@ -76,26 +73,11 @@ public class FolkbokfordAdapter
                         + folkbokfordRequest.personnummer());
          }
       }
-      catch (NotFoundException ex)
+      catch (WebApplicationException ex)
       {
-         var message = "Folkbokföringsinformation not found for social security number " + folkbokfordRequest.personnummer();
-         LOGGER.error(message, ex);
-         throw new FolkbokfordException(FolkbokfordException.ErrorType.NOT_FOUND, message);
+         throw toFolkbokfordException(ex, folkbokfordRequest);
       }
-      catch (BadRequestException ex)
-      {
-         var message = "Bad request while fetching folkbokföringsinformation for social security number "
-               + folkbokfordRequest.personnummer();
-         LOGGER.error(message, ex);
-         throw new FolkbokfordException(FolkbokfordException.ErrorType.BAD_REQUEST, message);
-      }
-      catch (ServiceUnavailableException ex)
-      {
-         var message = "Request could not be handled by server";
-         LOGGER.error(message, ex);
-         throw new FolkbokfordException(FolkbokfordException.ErrorType.SERVICE_UNAVAILABLE, message);
-      }
-      catch (ProcessingException | WebApplicationException ex)
+      catch (ProcessingException ex)
       {
          var message = "An unexpected error occurred while fetching folkbokföringsinformation for social security number "
                + folkbokfordRequest.personnummer();
@@ -114,5 +96,35 @@ public class FolkbokfordAdapter
          LOGGER.error(message, ex);
          throw new FolkbokfordException(FolkbokfordException.ErrorType.UNEXPECTED_ERROR, message, ex);
       }
+   }
+
+   private FolkbokfordException toFolkbokfordException(WebApplicationException ex, FolkbokfordRequest folkbokfordRequest)
+   {
+      var status = ex.getResponse() != null ? ex.getResponse().getStatus() : -1;
+      var personnummer = folkbokfordRequest.personnummer();
+      return switch (status)
+      {
+         case 404 -> {
+            var message = "Folkbokföringsinformation not found for social security number " + personnummer;
+            LOGGER.error(message, ex);
+            yield new FolkbokfordException(FolkbokfordException.ErrorType.NOT_FOUND, message);
+         }
+         case 400 -> {
+            var message = "Bad request while fetching folkbokföringsinformation for social security number " + personnummer;
+            LOGGER.error(message, ex);
+            yield new FolkbokfordException(FolkbokfordException.ErrorType.BAD_REQUEST, message);
+         }
+         case 503 -> {
+            var message = "Request could not be handled by server";
+            LOGGER.error(message, ex);
+            yield new FolkbokfordException(FolkbokfordException.ErrorType.SERVICE_UNAVAILABLE, message);
+         }
+         default -> {
+            var message = "An unexpected error occurred while fetching folkbokföringsinformation for social security number "
+                  + personnummer;
+            LOGGER.error(message, ex);
+            yield new FolkbokfordException(FolkbokfordException.ErrorType.UNEXPECTED_ERROR, message, ex);
+         }
+      };
    }
 }
