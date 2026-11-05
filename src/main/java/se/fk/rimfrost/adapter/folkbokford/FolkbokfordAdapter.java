@@ -7,6 +7,8 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.ProcessingException;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.glassfish.jersey.apache5.connector.Apache5ConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
@@ -41,7 +43,7 @@ public class FolkbokfordAdapter
    {
       ClientConfig clientConfig = new ClientConfig();
       clientConfig.connectorProvider(new Apache5ConnectorProvider());
-      client = new JerseyClientBuilder().withConfig(clientConfig).build();
+      client = JerseyClientBuilder.createClient(clientConfig);
       this.folkbokfordClient = WebResourceFactory.newResource(
             FolkbokforingControllerApi.class,
             client.target(folkbokfordBaseUrl));
@@ -100,9 +102,8 @@ public class FolkbokfordAdapter
 
    private FolkbokfordException toFolkbokfordException(WebApplicationException ex, FolkbokfordRequest folkbokfordRequest)
    {
-      var status = ex.getResponse() != null ? ex.getResponse().getStatus() : -1;
       var personnummer = folkbokfordRequest.personnummer();
-      return switch (status)
+      return switch (ex.getResponse().getStatus())
       {
          case 404 -> {
             var message = "Folkbokföringsinformation not found for social security number " + personnummer;
