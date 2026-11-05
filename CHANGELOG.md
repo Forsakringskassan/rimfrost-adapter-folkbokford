@@ -2,6 +2,18 @@
 
 Changelog of rimfrost-adapter-folkbokford.
 
+## 1.1.7 (2026-11-05)
+
+### Bug Fixes
+
+-  remove suppress unused ([9214a](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/9214a9accfc0f44) Nils Elveros)  
+-  remove unused import ([bc220](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/bc220cf57559048) Nils Elveros)  
+-  small cleanup ([9980e](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/9980e15a291e8af) Nils Elveros)  
+-  force Jersey client and map errors by status code ([fdc9c](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/fdc9ceea40962c9) Nils Elveros)  
+
+### Dependency updates
+
+- update forsakringskassan/.github digest to 625efb1 ([191c0](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/191c0ff272ded19) renovate[bot])  
 ## 1.1.6 (2026-10-28)
 
 ### Bug Fixes
