@@ -14,6 +14,7 @@ import se.fk.rimfrost.adapter.folkbokford.dto.ImmutableFolkbokfordRequest;
 import se.fk.rimfrost.adapter.folkbokford.dto.ImmutableFolkbokfordResponse;
 
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -166,5 +167,15 @@ public class FolkbokfordAdapterTest
       {
          assertEquals(FolkbokfordException.ErrorType.UNEXPECTED_ERROR, e.getErrorType());
       }
+   }
+
+   @Test
+   void testGetFolkbokfordUnknownProperty(FolkbokfordAdapter folkbokfordAdapter)
+   {
+      var folkbokfordRequest = ImmutableFolkbokfordRequest.builder()
+            .personnummer("19990101-5555")
+            .build();
+
+      assertDoesNotThrow(() -> folkbokfordAdapter.getFolkbokfordInfo(folkbokfordRequest));
    }
 }

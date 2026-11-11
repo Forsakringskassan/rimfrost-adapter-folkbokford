@@ -41,6 +41,7 @@ public class FolkbokfordAdapter
    {
       ClientConfig clientConfig = new ClientConfig();
       clientConfig.connectorProvider(new Apache5ConnectorProvider());
+      clientConfig.register(AdapterObjectMapperProvider.class);
       client = JerseyClientBuilder.createClient(clientConfig);
       this.folkbokfordClient = WebResourceFactory.newResource(
             FolkbokforingControllerApi.class,
