@@ -2,6 +2,16 @@
 
 Changelog of rimfrost-adapter-folkbokford.
 
+## 1.1.8 (2026-11-11)
+
+### Bug Fixes
+
+-  Add support for ignoring unknown json properties ([bdfca](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/bdfca07f4ec60a6) Lars Persson)  
+-  **deps**  update dependency com.fasterxml.jackson.core:jackson-databind to v2.23.0 ([9f0ca](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/9f0ca098d541649) renovate[bot])  
+
+### Dependency updates
+
+- update forsakringskassan/.github digest to cbc0db8 ([04659](https://github.com/Forsakringskassan/rimfrost-adapter-folkbokford/commit/0465922bab3e719) renovate[bot])  
 ## 1.1.7 (2026-11-05)
 
 ### Bug Fixes
